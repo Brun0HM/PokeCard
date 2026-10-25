@@ -1,5 +1,9 @@
 function Catalogo() {
-  return <section aria-label="Catálogo de produtos" />;
+  return (
+    <section>
+      
+    </section> 
+  )
 }
 
 export default Catalogo;

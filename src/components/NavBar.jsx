@@ -1,4 +1,6 @@
+import { Link, NavLink } from "react-router";
 import pokemon from "../assets/Pokemon.png";
+
 function NavBar() {
   return (
     <>
@@ -7,9 +9,9 @@ function NavBar() {
         aria-label="Navegação principal"
       >
         <div className="container-fluid">
-          <a className="navbar-brand ms-1" href="#">
+          <Link className="navbar-brand ms-1" to="/">
             <img src={pokemon} alt="PokeCard" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,14 +27,25 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav w-100 mb-2 mb-lg-0 align-items-center justify-content-lg-evenly gap-1 gap-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-white" aria-current="page" href="#">
+                <NavLink
+                  to="/"
+                  end
+                  className={({ isActive }) =>
+                    `nav-link text-white${isActive ? " active" : ""}`
+                  }
+                >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <NavLink
+                  to="/catalogo"
+                  className={({ isActive }) =>
+                    `nav-link text-white${isActive ? " active" : ""}`
+                  }
+                >
                   Catalogo
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#">
