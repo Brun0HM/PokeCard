@@ -2,7 +2,7 @@ import pokemon from "../assets/Pokemon.png";
 function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-pill site-navbar justify-content-center">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-pill site-navbar intro-navbar justify-content-center">
         <div className="container-fluid container-lg-fluid">
           <a className="navbar-brand ms-1" href="#">
             <img src={pokemon} alt="Logo" />
@@ -40,6 +40,14 @@ function NavBar() {
           </div>
         </div>
       </nav>
+
+      <div className="pokeball-intro" aria-hidden="true">
+        <div className="pokeball">
+          <span className="pokeball-half top" />
+          <span className="pokeball-half bottom" />
+          <span className="pokeball-button" />
+        </div>
+      </div>
     </>
   );
 }

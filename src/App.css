@@ -20,3 +20,195 @@ body {
 .navbar .navbar-toggler:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
+
+/* =========================================================
+   Intro: pokébola que desce, gira e se abre virando a navbar
+   (aplicado apenas no desktop, >= 992px)
+   ========================================================= */
+
+.nav-stage {
+  position: relative;
+}
+
+.pokeball-intro {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .intro-navbar {
+    animation: navbar-reveal 0.55s cubic-bezier(0.3, 0.9, 0.3, 1) 1.72s both;
+    will-change: clip-path, opacity;
+  }
+
+  .pokeball-intro {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 62px;
+    height: 62px;
+    margin: -31px 0 0 -31px;
+    z-index: 5;
+    pointer-events: none;
+    animation:
+      pokeball-drop 0.9s cubic-bezier(0.22, 0.7, 0.3, 1) both,
+      pokeball-vanish 0.2s ease-out 2.15s forwards;
+    will-change: transform, opacity;
+  }
+
+  .pokeball {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+    animation: pokeball-settle 0.75s ease-in-out 0.9s both;
+    will-change: transform;
+  }
+
+  .pokeball-half {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+  }
+
+  .pokeball-half.top {
+    top: 0;
+    background: #e3350d;
+    border-bottom: 3px solid #16181c;
+    border-radius: 31px 31px 0 0;
+    animation: pokeball-open-top 0.5s cubic-bezier(0.3, 0.8, 0.4, 1) 1.65s both;
+    will-change: transform, opacity;
+  }
+
+  .pokeball-half.bottom {
+    bottom: 0;
+    background: #f4f4f4;
+    border-top: 3px solid #16181c;
+    border-radius: 0 0 31px 31px;
+    animation: pokeball-open-bottom 0.5s cubic-bezier(0.3, 0.8, 0.4, 1) 1.65s
+      both;
+    will-change: transform, opacity;
+  }
+
+  .pokeball-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    background: #fff;
+    border: 3px solid #16181c;
+    border-radius: 50%;
+    animation: pokeball-button-flash 0.45s ease-out 1.65s both;
+    will-change: transform, opacity;
+  }
+}
+
+@keyframes pokeball-drop {
+  from {
+    transform: translate3d(0, -60vh, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0) rotate(720deg);
+  }
+}
+
+@keyframes pokeball-settle {
+  0% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+  14% {
+    transform: scale(1.14, 0.84) rotate(0deg);
+  }
+  30% {
+    transform: scale(0.96, 1.05) rotate(-10deg);
+  }
+  46% {
+    transform: rotate(8deg);
+  }
+  62% {
+    transform: rotate(-5deg);
+  }
+  78% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pokeball-open-top {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-42px) rotate(-24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pokeball-open-bottom {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(42px) rotate(24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pokeball-button-flash {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.35);
+    box-shadow: 0 0 18px 8px rgba(255, 248, 220, 0.85);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(2.4);
+    box-shadow: 0 0 40px 28px rgba(255, 255, 255, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes pokeball-vanish {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes navbar-reveal {
+  from {
+    clip-path: inset(0 48% 0 48% round 31px);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 31px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-navbar {
+    animation: none;
+  }
+  .pokeball-intro {
+    display: none;
+  }
+}
+
