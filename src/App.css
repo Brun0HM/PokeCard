@@ -1,5 +1,6 @@
 body {
   background-color: #121212 !important;
+  color: #f8f9fa;
 }
 
 .site-navbar {
@@ -21,11 +22,7 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
 
-/* =========================================================
-   Intro: pokébola que desce, gira e se abre virando a navbar
-   (aplicado apenas no desktop, >= 992px)
-   ========================================================= */
-
+/* Códigos referentes a animação da pokebola ao reiniciar o site */
 .nav-stage {
   position: relative;
 }
@@ -211,4 +208,3 @@ body {
     display: none;
   }
 }
-

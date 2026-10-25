@@ -2,10 +2,13 @@ import pokemon from "../assets/Pokemon.png";
 function NavBar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-pill site-navbar intro-navbar justify-content-center">
-        <div className="container-fluid container-lg-fluid">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark bg-dark rounded-pill site-navbar intro-navbar justify-content-center"
+        aria-label="Navegação principal"
+      >
+        <div className="container-fluid">
           <a className="navbar-brand ms-1" href="#">
-            <img src={pokemon} alt="Logo" />
+            <img src={pokemon} alt="PokeCard" />
           </a>
           <button
             className="navbar-toggler"
