@@ -1,0 +1,22 @@
+body {
+  background-color: #121212 !important;
+}
+
+.site-navbar {
+  width: min(50%, 720px);
+}
+
+@media (max-width: 991.98px) {
+  .site-navbar.rounded-pill {
+    width: 100%;
+    border-radius: 1rem !important;
+  }
+}
+
+.navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
