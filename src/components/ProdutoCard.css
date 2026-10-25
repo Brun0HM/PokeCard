@@ -1,0 +1,119 @@
+.produto-card {
+  --produto-acento: #e3350d;
+  --produto-borda: #2b2b2b;
+  background: linear-gradient(180deg, #1d1d1d 0%, #151515 100%);
+  border: 1px solid var(--produto-borda);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.produto-card:hover,
+.produto-card:focus-within {
+  transform: translateY(-6px);
+  border-color: rgba(227, 53, 13, 0.55);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(227, 53, 13, 0.12);
+}
+
+.produto-card__midia {
+  aspect-ratio: 4 / 5;
+  padding: 1.25rem;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(227, 53, 13, 0.16),
+      transparent 62%
+    ),
+    #101010;
+  border-bottom: 1px solid var(--produto-borda);
+}
+
+.produto-card__midia img {
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover .produto-card__midia img {
+  transform: scale(1.06);
+}
+
+/* Pokébola do placeholder — desenhada em CSS */
+.produto-card__placeholder {
+  position: relative;
+  width: 84px;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    #e3350d 0 47%,
+    #16181c 47% 53%,
+    #f4f4f4 53% 100%
+  );
+  border: 3px solid #16181c;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.produto-card__placeholder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  aspect-ratio: 1;
+  background: #f4f4f4;
+  border: 3px solid #16181c;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.produto-card .produto-card__categoria {
+  margin: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  background-color: rgba(227, 53, 13, 0.9);
+}
+
+.produto-card__preco {
+  font-size: 1.15rem;
+  color: #ffcb05;
+}
+
+/* Cores da marca aplicadas via variáveis do próprio Bootstrap */
+.produto-card .btn {
+  --bs-btn-bg: var(--produto-acento);
+  --bs-btn-border-color: var(--produto-acento);
+  --bs-btn-hover-bg: #c22c0a;
+  --bs-btn-hover-border-color: #c22c0a;
+  --bs-btn-active-bg: #c22c0a;
+  --bs-btn-active-border-color: #c22c0a;
+  --bs-btn-focus-shadow-rgb: 227, 53, 13;
+  --bs-btn-padding-y: 0.55rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-font-size: 0.9rem;
+  --bs-btn-border-radius: 0.65rem;
+}
+
+.produto-card .btn:active {
+  transform: scale(0.98);
+}
+
+.produto-card .btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .produto-card,
+  .produto-card__midia img {
+    transition: none;
+  }
+
+  .produto-card:hover,
+  .produto-card:focus-within {
+    transform: none;
+  }
+}

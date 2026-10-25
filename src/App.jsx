@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
+import ProdutoCard from "./components/ProdutoCard";
 
 function App() {
   return (
@@ -23,6 +24,21 @@ function App() {
               produtos especiais para colecionar, jogar e compartilhar sua
               paixão.
             </p>
+          </div>
+        </section>
+
+        <section
+          className="mt-5 container-fluid"
+          aria-labelledby="produtos-destaque"
+        >
+          <h2 id="produtos-destaque" className="h3 fw-bold text-center mb-4">
+            Produtos em destaque
+          </h2>
+
+          <div className="row g-3 g-md-4">
+            <div className="col-6 col-md-4">
+              <ProdutoCard nome="Pikachu" categoria="Raio" preco="RS: 49,9" />
+            </div>
           </div>
         </section>
       </main>
