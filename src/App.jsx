@@ -42,7 +42,7 @@ function App() {
           </h2>
 
           <div className="row g-3 g-md-4">
-            {produtos.map((produto) => (
+            {produtos.slice(0, 3).map((produto) => (
               <div className="col-6 col-md-4" key={produto.id}>
                 <ProdutoCard
                   nome={produto.nome}
