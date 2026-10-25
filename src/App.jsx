@@ -2,6 +2,12 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import ProdutoCard from "./components/ProdutoCard";
 
+const produtos = [
+  { id: 1, nome: "Pikachu", categoria: "Raio", preco: 49.9 },
+  { id: 2, nome: "Charizard VMAX", categoria: "Carta rara", preco: 249.9 },
+  { id: 3, nome: "Booster Pack", categoria: "Booster", preco: 29.9 },
+];
+
 function App() {
   return (
     <>
@@ -36,9 +42,15 @@ function App() {
           </h2>
 
           <div className="row g-3 g-md-4">
-            <div className="col-6 col-md-4">
-              <ProdutoCard nome="Pikachu" categoria="Raio" preco="RS: 49,9" />
-            </div>
+            {produtos.map((produto) => (
+              <div className="col-6 col-md-4" key={produto.id}>
+                <ProdutoCard
+                  nome={produto.nome}
+                  categoria={produto.categoria}
+                  preco={produto.preco}
+                />
+              </div>
+            ))}
           </div>
         </section>
       </main>
