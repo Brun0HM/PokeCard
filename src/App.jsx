@@ -1,10 +1,5 @@
 import ProdutoCard from "./components/Produto/ProdutoCard";
-
-const produtos = [
-  { id: 1, nome: "Pikachu", categoria: "Raio", preco: 49.9 },
-  { id: 2, nome: "Charizard VMAX", categoria: "Carta rara", preco: 249.9 },
-  { id: 3, nome: "Booster Pack", categoria: "Booster", preco: 29.9 },
-];
+import produtos from "./data/produtos";
 
 function App() {
   return (

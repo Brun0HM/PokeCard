@@ -7,6 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import App from "./App.jsx";
 import Catalogo from "./pages/Catalogo.jsx";
+import Contato from "./pages/Contato.jsx";
 import NavBar from "./components/NavBar.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/contato" element={<Contato />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

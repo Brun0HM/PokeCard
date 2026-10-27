@@ -48,9 +48,14 @@ function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <NavLink
+                  to="/contato"
+                  className={({ isActive }) =>
+                    `nav-link text-white${isActive ? " active" : ""}`
+                  }
+                >
                   Contato
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
