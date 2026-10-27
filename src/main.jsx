@@ -9,6 +9,7 @@ import App from "./App.jsx";
 import Catalogo from "./pages/Catalogo.jsx";
 import Contato from "./pages/Contato.jsx";
 import NavBar from "./components/NavBar.jsx";
+import Footer from "./components/Footer.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,6 +23,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/contato" element={<Contato />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   </StrictMode>,
 );

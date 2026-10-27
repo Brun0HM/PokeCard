@@ -31,7 +31,7 @@ const contatos = [
 
 function Contato() {
   return (
-    <main className="container py-4 py-md-5">
+    <main className="container py-4 py-md-5 min-vh-100">
       <section
         className="row justify-content-center"
         aria-labelledby="titulo-contato"
